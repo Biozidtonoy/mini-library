@@ -20,16 +20,28 @@ addBookToLibrary("science","rafsan",800);
 function displayBooks(){
     const container = document.querySelector(".container");
     container.innerHTML = '';
-    myLibrary.forEach((book)=>{
+    myLibrary.forEach((book,index)=>{
         const card = document.createElement("div");
         card.classList.add("div-item");
-        card.innerHTML = `<h3>Title : ${book.title}</h3>
+        card.innerHTML = `
+        <h3>Title : ${book.title}</h3>
         <p>Author : ${book.author}</p>
         <p>Page: ${book.pages}</p>`;
         container.appendChild(card);
-    });
     
+        const removeBtn = document.createElement("button");
+        removeBtn.classList.add("remove-btn");
+        removeBtn.textContent = "remove";
+        card.appendChild(removeBtn);
+        removeBtn.addEventListener("click",()=>{
+        myLibrary.splice(index, 1);
+        displayBooks();
+})
+
+    });
 }
+
+
 
 
 // == show form ==
@@ -62,7 +74,9 @@ newBookForm.addEventListener("submit", (event)=>{
     const pages = newBookForm.pages.value;
     
     addBookToLibrary(title,author,pages);
-
+    titleInput.value = "";
+    authorInput.value = "";
+    pageInput.value = "";
     newBookFormContainer.style.display = "none";
 })
 

@@ -27,10 +27,14 @@ body{
     gap: 10px;
     grid-auto-flow: row;
 }
-.div-item{
-    border: 1px solid red;
-    height: 50vh;
-}
+.div-item {
+    border: 1px solid #ccc;
+    min-height: 20vh ;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
 .btn1{
     height: 30px;
     width:100px;
@@ -94,4 +98,14 @@ body{
     border: none;
     border-radius: 10px;
     font-weight: 900;
+  }
+  .remove-btn {
+    margin-top: 20px;
+    background-color: #ae6767;
+    color: rgb(255, 255, 255);
+    min-width: 50px;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
   }
