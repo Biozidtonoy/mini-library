@@ -8,9 +8,33 @@
 </head>
 <body>
     <div class="header">
-        <h1>Library</h1>
+        <div class="headerName">
+            <h1>Library</h1>
+        </div>
+        <div>
+            <button class="btn1">Add New Book</button>
+        </div>
     </div>
-
+    <div class="container"></div>
+    <div class="newBookForm">
+        <form action="#" method="post">
+            <label for="title">Title :
+            </label>
+            <input type="text" name="title" id="title"><br>
+            <label for="author">Author :</label>
+            <input type="text" name="author" id="author"><br>
+            <label for="pages">Total Page :</label>
+            <input type="text" name="pages" id="pages">
+        </form>
+        <div class="form-Btn">
+            <button type="submit" id="added" class="added-btn" >
+              Added
+            </button>
+            <button type="submit" id="submit" class="clear-btn" >
+                Clear
+              </button>
+          </div>
+    </div>
     <script src="library.js"></script>
 </body>
 </html>

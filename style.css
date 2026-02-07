@@ -15,4 +15,71 @@ body{
     background-color: rgb(214, 154, 154);
     box-shadow: 0 5px 5px 0 rgb(0,0,0,0.15);
     color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
 }
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    grid-auto-flow: row;
+}
+.div-item{
+    border: 1px solid red;
+    height: 50vh;
+}
+.btn1{
+    height: 30px;
+    width:100px;
+    border-radius: 10px;
+    border:none;
+    background-color: rgb(33, 177, 33);
+    color: white;
+    font-weight: bold;
+    
+}
+.btn1:hover{
+    height: 35px;
+    width:110px;
+    box-shadow: 0 5px 5px 2px rgb(0,0,0,0.15);
+}
+.newBookForm{
+    border: 1px solid red;
+    max-width: 400px;        
+    margin: 40px auto;       
+    padding: 20px;
+    background-color: #f8f8f8; /* light grey background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+.newBookForm form{
+    display: flex;
+    flex-direction: column;
+}
+.newBookForm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .newBookForm input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  .added-btn,.clear-btn{
+    background-color: green;
+    min-height: 30px;
+    min-width: 70px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 900;
+  }
