@@ -9,34 +9,60 @@ function Book(title,author,pages){
 
 function addBookToLibrary(bookTitle,bookAuthor ,totalPages) {
     const newBook = new Book(bookTitle,bookAuthor,totalPages);
-    myLibrary.push(newBook)
+    myLibrary.push(newBook);
+    displayBooks();
    
 }
-addBookToLibrary("science","tonoy",888);
-addBookToLibrary("commerce","tonni",200);
-addBookToLibrary("math","safwan",500);
-console.log(myLibrary);
-
+addBookToLibrary("science","tonoy",800);
+addBookToLibrary("math","tonni",800);
+addBookToLibrary("science","rafsan",800);
 
 function displayBooks(){
     const container = document.querySelector(".container");
-
-    for(let i=0; i < myLibrary.length; i++){
-        const book = myLibrary[i];
-
+    container.innerHTML = '';
+    myLibrary.forEach((book)=>{
         const card = document.createElement("div");
         card.classList.add("div-item");
-        container.appendChild(card);
-
         card.innerHTML = `<h3>Title : ${book.title}</h3>
         <p>Author : ${book.author}</p>
-        <p>Page: ${book.pages}</p>`
-    }
-}
-displayBooks();
-
-const btn1= document.querySelector(".btn1");
-btn1.addEventListener("click", ()=>{
+        <p>Page: ${book.pages}</p>`;
+        container.appendChild(card);
+    });
     
+}
+
+
+// == show form ==
+const newBookFormContainer = document.querySelector(".newBookFormContainer");
+const addNewBookBtn = document.querySelector(".btn1");
+const cancelBtn = document.querySelector(".cancel-btn");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pageInput = document.querySelector("#pages");
+
+addNewBookBtn.addEventListener("click", ()=>{ 
+    newBookFormContainer.style.display =  "block";
+    console.log("clicked");
     
 });
+
+cancelBtn.addEventListener("click", () =>{
+    newBookFormContainer.style.display = "none";
+    titleInput.value = "";
+    authorInput.value = "";
+    pageInput.value = "";
+})
+
+
+const newBookForm = document.querySelector(".newBookForm")
+newBookForm.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    const title = newBookForm.title.value;
+    const author = newBookForm.author.value;
+    const pages = newBookForm.pages.value;
+    
+    addBookToLibrary(title,author,pages);
+
+    newBookFormContainer.style.display = "none";
+})
+

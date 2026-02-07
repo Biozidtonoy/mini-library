@@ -46,7 +46,7 @@ body{
     width:110px;
     box-shadow: 0 5px 5px 2px rgb(0,0,0,0.15);
 }
-.newBookForm{
+.newBookFormContainer{
     border: 1px solid red;
     max-width: 400px;        
     margin: 40px auto;       
@@ -55,18 +55,19 @@ body{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     font-family: Arial, sans-serif;
+    display: none;
 }
-.newBookForm form{
+.newBookFormContainer form{
     display: flex;
     flex-direction: column;
 }
-.newBookForm label {
+.newBookFormContainer label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #333;
   }
   
-  .newBookForm input[type="text"] {
+  .newBookFormContainer input[type="text"] {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -74,10 +75,21 @@ body{
     font-size: 14px;
     transition: border 0.3s, box-shadow 0.3s;
   }
-  .added-btn,.clear-btn{
+  .added-btn{
     background-color: green;
-    min-height: 30px;
+    min-height: 40px;
+    margin: 10px;
     min-width: 70px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 900;
+  }
+  .cancel-btn{
+    background-color: green;
+    min-height: 40px;
+    margin: 10px;
+    min-width: 95%;
     color: white;
     border: none;
     border-radius: 10px;
